@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kitchen Stories</title>
+	<link rel="stylesheet" type="text/css" href="style_single.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div class="homepage">
+		<div class="topbar">
+			<a href="home.html"><img src="carlos-fernandez-w3awZjfVa6w-unsplash.jpg" alt="TopBar Photo"></a>
+			<div class="links">
+				<a href="home.html">Home</a>
+				<a href="add_recipe_form.html">Add Recipe</a>
+			</div>
+		</div>
+        <div class="recipe-container">
+            <img src="header.jpg" alt="Header Photo">
+            <h1>Recipe Name</h1>
+            <div class="ingredients">
+                <h2>Ingredients:</h2>
+                <p>this</p>
+                <p>that</p>
+                   
+            </div>
+            <div class="instructions">
+                <h2>Instructions:</h2>
+                <p>this</p>
+                <p>that</p>
+                  
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the recipe ID from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const recipeId = urlParams.get('id');
+
+// Send a GET request to the API endpoint
+fetch(`http://localhost:8080/api/getRecipes/${recipeId}`)
+  .then(response => response.json())
+  .then(recipe => {
+    // Populate the HTML elements with the recipe information
+    document.querySelector('title').textContent = recipe.title;
+    document.querySelector('h1').textContent = recipe.title;
+    document.querySelector('.ingredients').innerHTML = `
+      <h2>Ingredients:</h2>
+      ${recipe.ingredients.map(ingredient => `<p>${ingredient}</p>`).join('')}
+    `;
+    document.querySelector('.instructions').innerHTML = `
+      <h2>Instructions:</h2>
+      <ol>
+        ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+      </ol>
+    `;
+  })
+  .catch(error => console.error(error));
+
+    </script>
+</body>
+</html>

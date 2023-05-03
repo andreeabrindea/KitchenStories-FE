@@ -1,0 +1,85 @@
+.homepage {
+	display: flex;
+	align-items: center;
+	justify-content: center; /* add this line to center the header horizontally */
+	flex-direction: column;
+}
+
+.topbar img {
+	max-height: 70px;
+	margin-right: 20px;
+	margin-top: 30px;
+  border-radius: 20px;
+}
+
+.topbar {
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* change this line to 'space-between' to spread out the links */
+	width: 100%; /* add this line to make the topbar full width */
+	max-width: 960px; /* add this line to limit the width of the topbar to 960px */
+	margin: 0 auto; /* add this line to center the topbar horizontally */
+	border-radius: 5px;
+	position: sticky;
+	top: 0;
+}
+
+.links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.links a {
+	color: black;
+	margin-left: 20px;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
