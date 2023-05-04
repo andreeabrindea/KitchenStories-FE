@@ -48,7 +48,7 @@ submitButton.addEventListener('click', (event) => {
   let max = 100;
   const id = Math.floor(Math.random() * (max - min + 1)) + min;
   const recipeName = form.querySelector('#name').value;
-  const user_id = 2;
+  const user_id = 1;
   const recipePhoto = form.querySelector('#name').value;
   const recipeIngredients = form.querySelector('#ingredients').value;
   const recipeInstructions = form.querySelector('#instructions').value;
@@ -56,7 +56,7 @@ submitButton.addEventListener('click', (event) => {
   const formData = {
     id: id,
     name: recipeName,
-    user_id: 2,
+    user_id: 1,
     photo: recipePhoto,
     ingredients: recipeIngredients,
     instructions: recipeInstructions
