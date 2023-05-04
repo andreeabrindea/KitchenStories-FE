@@ -4,7 +4,8 @@
 	<title>Kitchen Stories</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="UTF-8">
-	<script> fetch('https://kitchenstoriesbe.fly.dev/api/getRecipes')
+	<script> 
+	fetch('https://kitchenstoriesbe.fly.dev/api/getRecipes')
 		.then(response => response.json())
 		.then(recipes => {
 		  // Generate HTML for each recipe preview

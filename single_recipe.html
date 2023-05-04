@@ -16,22 +16,14 @@
         <a href="register_page.html">Sign up</a>
 			</div>
 		</div>
-        <div class="recipe-container">
-            <img src="toa-heftiba-oQvESMKUkzM-unsplash.jpg" alt="Header Photo">
-            <h1>Recipe Name</h1>
-            <div class="ingredients">
-                <h2>Ingredients:</h2>
-                <p>this</p>
-                <p>that</p>
-                   
+
+        <div class="recipe-previews" id="recipes-container">
+          <div class="recipe-preview">
+            <img src="toa-heftiba-oQvESMKUkzM-unsplash.jpg" alt="recipe">
+                <h3>Recipe 1</h3>
             </div>
-            <div class="instructions">
-                <h2>Instructions:</h2>
-                <p>this</p>
-                <p>that</p>
-                  
             </div>
-        </div>
+
     </div>
     <script>
         // Get the recipe ID from the URL
@@ -41,24 +33,23 @@ const recipeId = urlParams.get('id');
 
 // Send a GET request to the API endpoint with the recipe ID as a parameter
 fetch(`https://kitchenstoriesbe.fly.dev/api/getRecipes/${recipeId}`)
-  .then(response => response.json())
-  .then(recipe => {
-    // Populate the HTML elements with the recipe information
-    document.querySelector('title').textContent = recipe.name;
-    document.querySelector('h1').textContent = recipe.name;
-    document.querySelector('.ingredients').innerHTML = `
-      <h2>Ingredients:</h2>
-      ${recipe.ingredients.map(ingredient => `<p>${ingredient}</p>`).join('')}
-    `;
-    document.querySelector('.instructions').innerHTML = `
-      <h2>Instructions:</h2>
-      <ol>
-        ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
-      </ol>
-    `;
-  })
-  .catch(error => console.error(error));
-
-    </script>
+.then(response => response.json())
+		.then(recipes => {
+		  // Generate HTML for each recipe preview
+		  const recipePreviewsHTML = recipes.map(recipe => `
+			<div class="recipe-preview">
+        <img src="toa-heftiba-oQvESMKUkzM-unsplash.jpg" alt="recipe">
+			  <h3>${recipe.name}</h3>
+			  <p>Posted by ${recipe.user_name}</p>
+			  <p>Ingredients: ${recipe.ingredients}</p>
+			  <p>Instructions: ${recipe.instructions}</p>
+			</div>
+		  `).join('');
+	
+		  // Display the recipe previews in the recipes container
+		  document.getElementById('recipes-container').innerHTML = recipePreviewsHTML;
+		})
+		.catch(error => console.error(error));
+		</script>
 </body>
 </html>
