@@ -10,7 +10,8 @@
 		  // Generate HTML for each recipe preview
 		  const recipePreviewsHTML = recipes.map(recipe => `
 			<div class="recipe-preview">
-			  <img src="toa-heftiba-oQvESMKUkzM-unsplash.jpg" alt="${recipe.name}">
+			  <a href="single_recipe.html">
+			  <img src="toa-heftiba-oQvESMKUkzM-unsplash.jpg" alt="${recipe.name}"></a>
 			  <h3>${recipe.name}</h3>
 			  <p>Posted by ${recipe.user_name}</p>
 			  <p>Ingredients: ${recipe.ingredients}</p>
