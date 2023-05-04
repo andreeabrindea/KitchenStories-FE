@@ -38,13 +38,14 @@
 const urlParams = new URLSearchParams(window.location.search);
 const recipeId = urlParams.get('id');
 
-// Send a GET request to the API endpoint
-fetch(`http://localhost:8080/api/getRecipes/${recipeId}`)
+
+// Send a GET request to the API endpoint with the recipe ID as a parameter
+fetch(`https://kitchenstoriesbe.fly.dev/api/getRecipes/${recipeId}`)
   .then(response => response.json())
   .then(recipe => {
     // Populate the HTML elements with the recipe information
-    document.querySelector('title').textContent = recipe.title;
-    document.querySelector('h1').textContent = recipe.title;
+    document.querySelector('title').textContent = recipe.name;
+    document.querySelector('h1').textContent = recipe.name;
     document.querySelector('.ingredients').innerHTML = `
       <h2>Ingredients:</h2>
       ${recipe.ingredients.map(ingredient => `<p>${ingredient}</p>`).join('')}
