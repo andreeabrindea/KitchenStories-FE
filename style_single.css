@@ -56,11 +56,17 @@ h1{
 	margin-top: 50px;
 }
 
-.recipe-container img {
+.recipe-preview img {
 	/* max-height: 800px; */
 	margin-top: 50px;
 	width: 50vw;
 	border-radius: 5px;
+	width: 700px;
+	height: autos;
 	
 }
-
+.recipe-preview{
+	justify-content: center;
+	text-align: center;
+	font-size: 25px;
+}

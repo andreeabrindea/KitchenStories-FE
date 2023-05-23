@@ -12,6 +12,7 @@
 			<div class="links">
 				<a href="home.html">Home</a>
 				<a href="add_recipe_form.html">Add Recipe</a>
+        <a href="login_page.html">Login</a>
                 <a href="register_page.html">Sign up</a>
 			</div>
 		</div>
@@ -33,7 +34,7 @@
             <button type="submit">Add Recipe</button>
           </form>
           <footer>
-			<p>© This is a faculty assignment. It is inspired by the real Kitchen Stories, https://www.kitchenstories.com. The photos are taken from here: https://unsplash.com
+            <p>© It is inspired by the real <a href="https://www.kitchenstories.com">Kitchen Stories.</a> The photos are taken from <a href="https://unsplash.com">unsplash.</a>
             </p>	
 		</footer>  
     </div>
@@ -48,7 +49,7 @@ submitButton.addEventListener('click', (event) => {
   let max = 100;
   const id = Math.floor(Math.random() * (max - min + 1)) + min;
   const recipeName = form.querySelector('#name').value;
-  const user_id = 2;
+  const user_id = 1;
   const recipePhoto = form.querySelector('#name').value;
   const recipeIngredients = form.querySelector('#ingredients').value;
   const recipeInstructions = form.querySelector('#instructions').value;
@@ -56,7 +57,7 @@ submitButton.addEventListener('click', (event) => {
   const formData = {
     id: id,
     name: recipeName,
-    user_id: 2,
+    user_id: 1,
     photo: recipePhoto,
     ingredients: recipeIngredients,
     instructions: recipeInstructions
