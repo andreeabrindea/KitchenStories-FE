@@ -22,39 +22,15 @@
 
 					// Display the recipe previews in the recipes container
 					document.getElementById('recipes-container').innerHTML = recipePreviewsHTML;
-
-					// Search functionality
-					const searchInput = document.getElementById('search-input');
-					const searchSelect = document.getElementById('search-select');
-					const searchButton = document.getElementById('search-button');
-
-					function filterRecipes() {
-						const searchTerm = searchInput.value.toLowerCase();
-						const searchCategory = searchSelect.value;
-
-						const filteredRecipes = recipes.filter(recipe => {
-							if (searchCategory === 'all') {
-								// Search in recipe name and user name
-								return recipe.name.toLowerCase().includes(searchTerm) ||
-									recipe.user_name.toLowerCase().includes(searchTerm);
-							} else if (searchCategory === 'recipes') {
-								// Search only in recipe name
-								return recipe.name.toLowerCase().includes(searchTerm);
-							} else if (searchCategory === 'ingredients') {
-								// Search only in recipe ingredients
-								return recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm));
-							}
-						});
-
-	
-					}
-
-					// Attach event listeners to search input, select, and button
-					searchInput.addEventListener('input', filterRecipes);
-					searchSelect.addEventListener('change', filterRecipes);
-					searchButton.addEventListener('click', filterRecipes);
 				})
 				.catch(error => console.error(error));
+
+			// Add event listener to the search button
+			document.getElementById('search-button').addEventListener('click', function() {
+				const searchInput = document.getElementById('search-input').value;
+				const url = `recipes.html?name=${encodeURIComponent(searchInput)}`;
+				window.location.href = url;
+			});
 		});
 	</script>
 </head>
