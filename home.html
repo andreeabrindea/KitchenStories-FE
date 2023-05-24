@@ -46,23 +46,7 @@
 							}
 						});
 
-						// Generate HTML for the filtered recipe previews
-						const filteredRecipePreviewsHTML = filteredRecipes.map(recipe => `
-							<div class="recipe-preview">
-								<a href="single_recipe.html?id=${recipe.id}">
-								<img src="toa-heftiba-oQvESMKUkzM-unsplash.jpg" alt="${recipe.name}"></a>
-								<h3>${recipe.name}</h3>
-								<p>Posted by ${recipe.user_name}</p>
-								<p>Ingredients: ${recipe.ingredients}</p>
-								<p>Instructions: ${recipe.instructions}</p>
-							</div>
-						`).join('');
-
-						// Display the filtered recipe previews in the recipes container
-						document.getElementById('recipes-container').innerHTML = filteredRecipePreviewsHTML;
-
-						// Redirect to recipes.html
-						window.location.href = 'recipes.html';
+	
 					}
 
 					// Attach event listeners to search input, select, and button
