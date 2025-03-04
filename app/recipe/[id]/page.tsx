@@ -43,7 +43,7 @@ export default function SingleRecipe()
   }, [params]);
   if (recipe == null)
   {
-    return (<div>Not Found</div>)
+    return (<main className='not-found'><b>Recipe Not Found</b></main>)
   }
   return (
    <main id="page-wrapper">

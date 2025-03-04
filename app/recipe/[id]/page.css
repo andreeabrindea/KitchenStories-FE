@@ -31,3 +31,12 @@ ol
 {
     list-style-type: upper-roman;
 }
+
+.not-found
+{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

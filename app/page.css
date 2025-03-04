@@ -34,3 +34,8 @@
     gap: 1vh;
 }
 }
+
+#latest-recipes-title{
+    margin: 2vh 1vw;
+    font-size: 2rem;
+}

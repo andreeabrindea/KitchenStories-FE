@@ -1,11 +1,13 @@
 import './header.css';
 import { FaUserCircle } from "react-icons/fa";
 import SearchBar from '../SearchBar/SearchBar';
- 
+import logo from '@/public/logo.png';
+import Image from 'next/image';
+
 export default function NavBar() {
     return (
       <section id='navigation-wrapper'>
-        <p className='logo'>Gourmet <br></br> Stories</p>
+       <Image src= {logo} alt="logo text" id="logo-image"></Image>
         <div className='search-bar-container'>
           <SearchBar/>
         </div>

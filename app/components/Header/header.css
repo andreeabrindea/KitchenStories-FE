@@ -16,4 +16,30 @@
 .user-icon-section
 {
     font-size: 1.5rem;
+    margin: 1vh 1vw;
+}
+
+#logo-image
+{
+    width: 6vw;
+    margin: 1vh 1vw;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px){
+    #navigation-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    #logo-image
+    {
+        width: 12vw;
+    }
 }
