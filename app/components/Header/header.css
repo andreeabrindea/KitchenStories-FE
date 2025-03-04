@@ -1,6 +1,5 @@
 #navigation-wrapper
-{
-    margin: 2vh 2vw 2vw 2vh;
+{   
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -1,0 +1,35 @@
+#recipe-box
+{
+    width: 16vw;
+    height: 16vw;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#recipe-box > img
+{
+    border-radius: 4px;
+}
+@media screen and (max-width: 480px){
+#recipe-box
+{
+    width: 64vw;
+    height: 64vw;
+}
+}
+
+#recipe-image
+{
+    margin: 1%;
+    width: 98%;
+    object-fit: contain;
+}
+
+#recipe-name
+{
+    text-align: center;
+}
+
+#recipe-author
+{
+    text-align: right;
+}
