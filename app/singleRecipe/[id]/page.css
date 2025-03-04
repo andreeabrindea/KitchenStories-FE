@@ -1,0 +1,33 @@
+#page-wrapper
+{
+    margin: 2vh 2vw 2vw 2vh;
+}
+
+.section-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-wrapper > img
+{
+    width: 60vw;
+    border-radius: 10px;
+}
+
+.recipe-section-wrapper
+{
+    margin: 2vh 20vw;
+}
+
+#recipe-name
+{
+    font-size: 2rem;
+}
+
+ol
+{
+    list-style-type: upper-roman;
+}

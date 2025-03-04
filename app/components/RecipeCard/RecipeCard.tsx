@@ -18,7 +18,7 @@ interface Recipe {
     <div id="recipe-box">
         <Image src={foodImage} alt='recipe' id="recipe-image"></Image>
         <p id="recipe-name">{recipe.name}</p>
-        <p id="recipe-author">{recipe.author}</p>
+        <p id="recipe-author">by {recipe.author}</p>
         <p>{recipe.description}</p>
     </div>
   )
