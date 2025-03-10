@@ -1,0 +1,61 @@
+import React from 'react';
+import './recipesCarousel.css';
+import Image from 'next/image';
+import Link from "next/link";
+import nextIcon from '@/public/arrow-right.png';
+import previousIcon from '@/public/left-arrow.png';
+import RecipeCard from '../RecipeCard/RecipeCard';
+import { useState, useEffect } from "react";
+
+const RecipesCarousel = () => {
+
+  const [recipes, setRecipes] = useState<any[] | null>(null);
+  useEffect(() =>
+  {
+    async function fetchRecipes()
+    {
+      const response = await fetch("http://localhost:5048/recipes");
+      let recipes = await response.json();
+      recipes = recipes.slice(0, 5);
+      setRecipes(recipes);
+    }
+
+    fetchRecipes();
+  }, []);
+  
+
+  interface Recipe {
+    id: string;
+    name: string;
+    author: string;
+    description: string;
+  }
+  if (recipes == null)
+  {
+    return (
+        <div>OOPS</div>
+    )
+  }
+
+  return (
+    <section id="recipes-carousel-wrapper">
+        <div id="title-wrapper">
+            <h1 id="recipes-carousel-title">featured recipes</h1>
+            <nav id="recipes-navigation">
+                <Image src={previousIcon} alt="left arrow" id="previous-recipe"></Image>
+                <Image src={nextIcon} alt="right arrow" id="next-recipe"></Image>
+            </nav>
+        </div>
+        <ul id="featured-recipies">
+          {
+            recipes.map((recipeElem: Recipe) => (
+            <li key={recipeElem.id}>
+                <RecipeCard recipe={recipeElem}></RecipeCard>
+            </li>))
+          }
+        </ul>
+    </section>
+  )
+}
+
+export default RecipesCarousel
