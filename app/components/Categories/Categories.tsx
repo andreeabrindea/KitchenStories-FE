@@ -8,10 +8,10 @@ import dessert from '@/public/panna-cotta.png';
 import snack from '@/public/snack.png';
 const Categories = () => {
   return (
-    <article id="categories-wrapper">
+    <section id="categories-wrapper">
     <div id="first-column">
         <button id="explore-button">EXPLORE</button>
-        <h1 id="category-title">OUR DIVERSE <br/>PALLETE</h1>
+        <h1 id="category-title">OUR DIVERSE <br/>PALETTE</h1>
         <p>If you are a breakfast enthusiast, a connoisseur of savory delights, <br/> or on the lookout for irresistible desserts, our curated selection has <br/> something to satisfy every palate.</p>
         <button id="see-more-button">SEE MORE</button>
     </div>
@@ -37,7 +37,7 @@ const Categories = () => {
         <p>SNACKS</p>
         </li>
     </ul>
-  </article>
+  </section>
   )
 }
 
