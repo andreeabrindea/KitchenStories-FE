@@ -1,0 +1,39 @@
+#header-wrapper
+{
+    margin: 1vh 2vw 1vh 2vw;
+    border-radius: 10px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    filter: grayscale(30%);
+}
+
+#title-first-paragraph
+{
+    text-align: center;
+    font-size: 3rem;
+    color: #F1ECE3;
+}
+
+#title-second-paragraph
+{
+    color: #F1ECE3;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#go-to-recipes-button
+{
+    margin-top: 4vh;
+    background-color: orange;
+    border-radius: 20;
+    padding: 4px 12px 4px 12px;
+}
+
+#go-to-recipes-button:hover
+{
+    cursor: pointer;
+}

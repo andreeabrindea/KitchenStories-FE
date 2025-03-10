@@ -1,11 +1,10 @@
 "use client";
-import Header from "./components/NavBar/NavBar";
-import foodImage from "../public/brooke-lark-wMzx2nBdeng-unsplash.jpg";
-import Image  from 'next/image';
+import NavBar from "./components/NavBar/NavBar";
 import './page.css';
 import RecipeCard from "./components/RecipeCard/RecipeCard";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Header from './components/Header/Header';
 export default function Home() {
 
   const [recipes, setRecipes] = useState<any[] | null>(null);
@@ -34,17 +33,19 @@ export default function Home() {
     return
     <main id="page-wrapper">
     <header>
-      <Header></Header>
+      <NavBar></NavBar>
     </header>
     </main>
   }
   return (
     <main id="page-wrapper">
+      <nav>
+        <NavBar/>
+      </nav>
       <header>
-        <Header></Header>
+        <Header/>
       </header>
-      <article id="image-wrapper">
-        <Image src={foodImage} alt="food image"></Image>
+      <article>
         <h2 id="latest-recipes-title">Latest recipes:</h2>
         <ul id="latest-recipies">
           {

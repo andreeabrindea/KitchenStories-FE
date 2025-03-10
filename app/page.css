@@ -3,20 +3,6 @@
     margin: 2vh 2vw 2vw 2vh;
 }
 
-#image-wrapper
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#image-wrapper > img
-{
-    width: 60vw;
-    border-radius: 10px;
-}
-
 #latest-recipies
 {
     display: flex;
