@@ -5,6 +5,7 @@ import RecipeCard from "./components/RecipeCard/RecipeCard";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Header from './components/Header/Header';
+import Categories from './components/Categories/Categories';
 export default function Home() {
 
   const [recipes, setRecipes] = useState<any[] | null>(null);
@@ -45,6 +46,7 @@ export default function Home() {
       <header>
         <Header/>
       </header>
+      <Categories/>
       <article>
         <h2 id="latest-recipes-title">Latest recipes:</h2>
         <ul id="latest-recipies">
