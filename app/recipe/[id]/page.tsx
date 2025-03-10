@@ -1,5 +1,5 @@
 "use client";
-import Header from '@/app/components/Header/Header';
+import Header from '@/app/components/NavBar/NavBar';
 import React from 'react';
 import './page.css';
 import recipeImage from '@/public/brooke-lark-wMzx2nBdeng-unsplash.jpg';

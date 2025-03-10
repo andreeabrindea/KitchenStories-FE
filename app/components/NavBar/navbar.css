@@ -1,0 +1,46 @@
+#navigation-wrapper
+{   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #DED9D0;
+    border-radius: 20;
+    padding: 8px;
+    margin: 1vh 2vw 1vh 2vw;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 480px){
+    #navigation-wrapper
+    {
+        font-size: 0.5rem;
+    }
+}
+
+#list-pages
+{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    color: #BBB8B1;
+}
+
+#list-pages > li:hover
+{
+    color: #575551;
+    text-decoration: #EF7464 underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+}
+
+#logo-image
+{
+    width: 4vh;
+    height: auto;
+}
+
+#search-icon
+{
+    margin-right: 1vw;
+}

@@ -1,5 +1,5 @@
 "use client";
-import Header from "./components/Header/Header";
+import Header from "./components/NavBar/NavBar";
 import foodImage from "../public/brooke-lark-wMzx2nBdeng-unsplash.jpg";
 import Image  from 'next/image';
 import './page.css';
