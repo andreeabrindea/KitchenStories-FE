@@ -27,23 +27,6 @@
     border-bottom: 1px solid #C6E0F0;
 }
 
-@media screen and (max-width: 480px)
-{
-    #categories-wrapper
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 0.8rem;
-    }
-
-    #list-categories
-    {
-        width: 100%;
-    }
-}
-
 .meal-icon
 {
     width: 4vh;
@@ -72,4 +55,31 @@
 #category-title
 {
     font-size: 2rem;
+}
+
+@media screen and (max-width: 480px)
+{
+    #categories-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    #list-categories
+    {
+        width: 100%;
+    }
+
+    #explore-button
+    {
+        margin: 3vh 0 1vh 1vw;
+    }
+
+    #list-categories
+    {
+        margin-bottom: 1vh;
+    }
 }

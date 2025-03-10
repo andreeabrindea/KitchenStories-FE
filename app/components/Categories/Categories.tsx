@@ -9,7 +9,7 @@ import snack from '@/public/snack.png';
 const Categories = () => {
   return (
     <section id="categories-wrapper">
-    <div id="first-column">
+    <div>
         <button id="explore-button">EXPLORE</button>
         <h1 id="category-title">OUR DIVERSE <br/>PALETTE</h1>
         <p>If you are a breakfast enthusiast, a connoisseur of savory delights, <br/> or on the lookout for irresistible desserts, our curated selection has <br/> something to satisfy every palate.</p>
