@@ -28,7 +28,7 @@
 #go-to-recipes-button
 {
     margin-top: 4vh;
-    background-color: orange;
+    background-color: #F29E36;
     border-radius: 20;
     padding: 4px 12px 4px 12px;
 }
@@ -37,3 +37,16 @@
 {
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px)
+{
+    #title-first-paragraph
+    {
+        font-size: 1.5rem;
+    }
+    #title-second-paragraph, #go-to-recipes-button
+    {
+        font-size: 0.9rem;
+    }
+}
+    
