@@ -29,7 +29,7 @@ export default function SingleRecipe()
         const requestOptions: RequestInit = {
           method: "GET",
           headers: { "Content-Type": "application/json" }};
-        const response = await fetch(`http://localhost:5048/recipes/${params.id}`, requestOptions);
+        const response = await fetch(`https://gourmetstories.onrender.com/recipes/${params.id}`, requestOptions);
         const recipe = await response.json();
         setRecipe(recipe);
         console.log(recipe.description);

@@ -13,7 +13,7 @@ const RecipesCarousel = () => {
   {
     async function fetchRecipes()
     {
-      const response = await fetch("http://localhost:5048/recipes");
+      const response = await fetch("https://gourmetstories.onrender.com/recipes");
       let recipes = await response.json();
       recipes = recipes.slice(0, 5);
       setRecipes(recipes);
