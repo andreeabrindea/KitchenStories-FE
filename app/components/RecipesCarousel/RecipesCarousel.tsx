@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 const RecipesCarousel = () => {
 
-  const [recipes, setRecipes] = useState<any[] | null>(null);
+  const [recipes, setRecipes] = useState<Recipe[] | null>(null);
   useEffect(() =>
   {
     async function fetchRecipes()

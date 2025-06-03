@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import RecipeCard from "./components/RecipeCard/RecipeCard";
 
 export default function Home() {
-  const [recipes, setRecipes] = useState<any[] | null>(null);
+  const [recipes, setRecipes] = useState<Recipe[] | null>(null);
     useEffect(() =>
     {
       async function fetchRecipes()
