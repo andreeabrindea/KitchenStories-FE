@@ -1,7 +1,6 @@
 import React from 'react';
 import './recipesCarousel.css';
 import Image from 'next/image';
-import Link from "next/link";
 import nextIcon from '@/public/arrow-right.png';
 import previousIcon from '@/public/left-arrow.png';
 import RecipeCard from '../RecipeCard/RecipeCard';

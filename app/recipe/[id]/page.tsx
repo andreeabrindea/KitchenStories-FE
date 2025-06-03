@@ -58,7 +58,7 @@ export default function SingleRecipe()
       <h3><b>Ingredients:</b></h3>
       <ol>
         {
-          recipe.ingredients.map((ingredient: any, index: number) => (
+          recipe.ingredients.map((ingredient: string, index: number) => (
           <li key={index}>
             {ingredient}
           </li>))

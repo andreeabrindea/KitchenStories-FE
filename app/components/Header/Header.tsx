@@ -1,7 +1,6 @@
 "use client";
 import React from 'react'
 import foodImage from '@/public/jonathan-pielmayer-RKJElwIyCQw-unsplash.jpg'
-import Image  from 'next/image';
 import './header.css';
 
 const Header = () => {
