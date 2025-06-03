@@ -60,7 +60,7 @@ export default function Home() {
               </li>
             ))
           ) : (
-            <li>Backend is probably not working right now.</li>
+            <li>Backend is probably not working right now. Wait a bit as I am using render for backend deployment, and it will spin down with inactivity, which can delay requests by 50 seconds or more.</li>
           )}
         </ul>
       </section>

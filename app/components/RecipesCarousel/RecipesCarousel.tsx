@@ -12,6 +12,9 @@ const RecipesCarousel = () => {
   useEffect(() => {
     async function fetchRecipes() {
       const response = await fetch("https://gourmetstories.onrender.com/recipes");
+      if (!response.ok) {
+        throw new Error("Fetch failed");
+      }
       let recipes = await response.json();
       recipes = recipes.slice(0, 5);
       setRecipes(recipes);
@@ -44,7 +47,7 @@ const RecipesCarousel = () => {
               <RecipeCard recipe={recipeElem}></RecipeCard>
             </li>)))
           :
-          <li>Backend is probably not working right now.</li>
+          <li>Backend is probably not working right now. Wait a bit as I am using render for backend deployment, and it will spin down with inactivity, which can delay requests by 50 seconds or more.</li>
         }
       </ul>
     </section>
