@@ -9,10 +9,8 @@ import { useState, useEffect } from "react";
 const RecipesCarousel = () => {
 
   const [recipes, setRecipes] = useState<Recipe[] | null>(null);
-  useEffect(() =>
-  {
-    async function fetchRecipes()
-    {
+  useEffect(() => {
+    async function fetchRecipes() {
       const response = await fetch("https://gourmetstories.onrender.com/recipes");
       let recipes = await response.json();
       recipes = recipes.slice(0, 5);
@@ -21,7 +19,7 @@ const RecipesCarousel = () => {
 
     fetchRecipes();
   }, []);
-  
+
 
   interface Recipe {
     id: string;
@@ -29,30 +27,26 @@ const RecipesCarousel = () => {
     author: string;
     description: string;
   }
-  if (recipes == null)
-  {
-    return (
-        <div>OOPS</div>
-    )
-  }
 
   return (
     <section id="recipes-carousel-wrapper">
-        <div id="title-wrapper">
-            <h1 id="recipes-carousel-title">featured recipes</h1>
-            <nav id="recipes-navigation">
-                <Image src={previousIcon} alt="left arrow" id="previous-recipe"></Image>
-                <Image src={nextIcon} alt="right arrow" id="next-recipe"></Image>
-            </nav>
-        </div>
-        <ul id="featured-recipies">
-          {
-            recipes.map((recipeElem: Recipe) => (
+      <div id="title-wrapper">
+        <h1 id="recipes-carousel-title">featured recipes</h1>
+        <nav id="recipes-navigation">
+          <Image src={previousIcon} alt="left arrow" id="previous-recipe"></Image>
+          <Image src={nextIcon} alt="right arrow" id="next-recipe"></Image>
+        </nav>
+      </div>
+      <ul id="featured-recipies">
+        {recipes ?
+          (recipes.map((recipeElem: Recipe) => (
             <li key={recipeElem.id}>
-                <RecipeCard recipe={recipeElem}></RecipeCard>
-            </li>))
-          }
-        </ul>
+              <RecipeCard recipe={recipeElem}></RecipeCard>
+            </li>)))
+          :
+          <li>Backend is probably not working right now.</li>
+        }
+      </ul>
     </section>
   )
 }
