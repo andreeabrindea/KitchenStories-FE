@@ -53,7 +53,6 @@
   }
 
   nav {
-    display: block;
     display: flex;
     justify-content: space-around;
   }
@@ -68,7 +67,7 @@
   .hamburger-menu span {
     height: 5px;
     width: 100%;
-    background-color: #ef7464;
+    background-color: #494743;
     border-radius: 25px;
     position: absolute;
     top: 50%;
@@ -82,7 +81,12 @@
     position: fixed;
     top: 4%;
     z-index: 2;
-    color: #f29c33;
+  }
+
+  .hamburger-menu.active span {
+    background-color: #f29c33;
+    transition: background-color 2s;
+    border-radius: 25px;
   }
 
   .hamburger-menu span:nth-child(1) {
@@ -94,7 +98,6 @@
   }
 
   .hamburger-menu.active span:nth-child(1) {
-    color: #f29c33;
     top: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     z-index: 2;
@@ -105,7 +108,6 @@
   }
 
   .hamburger-menu.active span:nth-child(3) {
-    color: #f29c33;
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
     z-index: 2;
@@ -131,7 +133,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: baseline;
     margin-left: 10vw;
     gap: 16px;
     text-transform: capitalize;
@@ -149,10 +151,17 @@
     margin: 2vh 0 0 10vw;
     justify-content: space-between;
   }
+
   #off-screen-menu-footer * {
     background-color: #494743;
     padding: 4px;
     border-radius: 25px;
+    height: 4vh;
+  }
+  #search-icon-off-screen {
+    color: white;
+    width: 8vw;
+    padding: 12px;
   }
 
   #off-screen-menu-footer > button {
@@ -160,6 +169,14 @@
     color: white;
     width: 70%;
     text-transform: uppercase;
+  }
+
+  #logo-image-off-screen {
+    position: fixed;
+    top: 4%;
+    width: 4vh;
+    height: auto;
+    margin-left: 10vw;
   }
 }
 
