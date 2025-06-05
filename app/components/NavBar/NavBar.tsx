@@ -7,15 +7,14 @@ import { useState } from 'react';
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleHamburgerMenuClicked = () => {
-    console.log("ello?");
     setIsMenuOpen((prev) => {
-      console.log(prev);
       return !prev;
     });
   };
   return (
     <>
       <div className={`off-screen-menu ${isMenuOpen ? 'active' : ''}`}>
+        <Image src={logo} alt="cooking pot" id="logo-image-off-screen" />
         <ul id="list-pages-off-screen">
           <li>HOME</li>
           <li>RECIPES</li>
