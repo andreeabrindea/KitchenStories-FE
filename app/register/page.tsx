@@ -2,7 +2,6 @@
 import NavBar from "../components/NavBar/NavBar";
 import './register.css';
 import imagine from '@/public/brooke-lark-wMzx2nBdeng-unsplash.jpg';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 export default function Register() {
