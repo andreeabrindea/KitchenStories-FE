@@ -18,14 +18,13 @@
 .input-register {
   border-radius: 25px;
   outline: 1px solid gray;
-  margin-bottom: 1.5vh;
-  border: 2px; 
+  border: 2px;
   padding: 16px;
   height: 4vh;
 }
 
 .input-register:focus {
-  outline-color: #ef7464;
+  outline-color: #DCA157;
 }
 
 #register-form {
@@ -71,8 +70,14 @@
   margin-top: 1vh;
 }
 @media screen and (max-width: 860px) {
-    .register-wrapper section:first-child
-    {
-        display: none;
-    }
+  .register-wrapper section:first-child {
+    display: none;
+  }
+}
+
+#register-form > p {
+  color: #ef7464;
+  margin-top: 0.5vh;
+  margin-bottom: 1.5vh;
+  font-size: 0.9rem;
 }
