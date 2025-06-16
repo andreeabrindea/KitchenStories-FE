@@ -3,6 +3,7 @@ import logo from '@/public/cooking.png';
 import Image from 'next/image';
 import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function NavBar() {
       <div className={`off-screen-menu ${isMenuOpen ? 'active' : ''}`}>
         <Image src={logo} alt="cooking pot" id="logo-image-off-screen" />
         <ul id="list-pages-off-screen">
-          <li>HOME</li>
+          <li><Link href="/">HOME</Link></li>
           <li>RECIPES</li>
           <li>COOKING TIPS</li>
           <li>ABOUT US</li>
@@ -27,14 +28,18 @@ export default function NavBar() {
         </section>
       </div>
       <section id='navigation-wrapper'>
-        <Image src={logo} alt="cooking pot" id="logo-image" />
+        <Link href="/"><Image src={logo} alt="cooking pot" id="logo-image" /></Link>
         <ul id="list-pages">
-          <li>HOME</li>
+          <li><Link href="/">HOME</Link></li>
           <li>RECIPES</li>
           <li>COOKING TIPS</li>
           <li>ABOUT US</li>
         </ul>
-        <FaSearch id="search-icon"></FaSearch>
+        <section>
+          <FaSearch id="search-icon"></FaSearch>
+          <Link href="/login">Login</Link>
+          <Link href="/register">Sign up</Link>
+        </section>
         <nav id="hamburger-menu-nav">
           <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`} onClick={handleHamburgerMenuClicked}>
             <span></span>

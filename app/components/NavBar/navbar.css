@@ -114,7 +114,8 @@
   }
 
   #list-pages,
-  #search-icon {
+  #search-icon,
+  #navigation-wrapper section > * {
     display: none;
   }
 
@@ -186,5 +187,30 @@
 }
 
 #search-icon {
+  height: 100%;
+}
+
+#navigation-wrapper section {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5vw;
   margin-right: 0.5vw;
+  justify-content: center;
+  align-items: center;
+}
+
+#navigation-wrapper section :nth-child(2) {
+  border-radius: 25px;
+  padding: 4px 16px;
+  border: 1px solid #f29c33;
+  color: #f29c33;
+  cursor: pointer;
+}
+#navigation-wrapper section :nth-child(3) {
+  border-radius: 25px;
+  padding: 4px 16px;
+  border: 1px;
+  background-color: #f29c33;
+  color: #f0ebe1;
+  cursor: pointer;
 }
