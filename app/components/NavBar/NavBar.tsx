@@ -15,13 +15,19 @@ export default function NavBar() {
   return (
     <>
       <div className={`off-screen-menu ${isMenuOpen ? 'active' : ''}`}>
-        <Image src={logo} alt="cooking pot" id="logo-image-off-screen" />
-        <ul id="list-pages-off-screen">
-          <li><Link href="/">HOME</Link></li>
-          <li>RECIPES</li>
-          <li>COOKING TIPS</li>
-          <li>ABOUT US</li>
-        </ul>
+        <Link href="/"><Image src={logo} alt="cooking pot" id="logo-image-off-screen" /></Link>
+        <nav id="off-screen-links">
+          <div id="off-screen-authentification-links">
+            <Link href="/login">Login</Link>
+            <Link href="/register"id="off-screen-register-link">Sign up</Link>
+          </div>
+          <ul id="list-pages-off-screen">
+            <li><Link href="/">HOME</Link></li>
+            <li>RECIPES</li>
+            <li>COOKING TIPS</li>
+            <li>ABOUT US</li>
+          </ul>
+        </nav>
         <section id="off-screen-menu-footer">
           <FaSearch id="search-icon-off-screen"></FaSearch>
           <button>Subscribe</button>
