@@ -5,6 +5,7 @@ import imagine from '@/public/brooke-lark-wMzx2nBdeng-unsplash.jpg';
 import Link from 'next/link';
 import { useState, ChangeEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import validator from 'validator';
 
 export default function Register() {
     const [username, setUsername] = useState("");
@@ -19,7 +20,6 @@ export default function Register() {
     const [emailOutlineColor, setEmailOutlineColor] = useState("");
     const [passwordOutlineColor, setPasswordOutlineColor] = useState("");
     const [confirmPasswordOutlineColor, setConfirmPasswordOutlineColor] = useState("");
-    const valid = require("validator");
     const router = useRouter();
 
     async function register() {
@@ -62,7 +62,7 @@ export default function Register() {
             setEmailOutlineColor("#ef7464");
         }
         else {
-            if (valid.isEmail(e.target.value)) {
+            if (validator.isEmail(e.target.value)) {
                 setErrorMessageEmailInput("");
                 setEmailOutlineColor("green");
 
