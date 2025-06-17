@@ -73,6 +73,9 @@
   #register-wrapper > :first-child {
     display: none;
   }
+    #register-wrapper > :nth-child(2) {
+      margin-top: 2vh;
+    }
 }
 
 #register-form > p {
