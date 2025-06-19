@@ -120,8 +120,8 @@ export default function Register() {
                 </section>
                 <section id="form-section">
                     <h1>Sign up</h1>
-                    <p>Already have an account? <Link href="/login" id="login-link">Log in</Link></p>
-                    <form id="register-form">
+                    <p>Already have an account? <Link href="/login" className="link">Log in</Link></p>
+                    <form className="authentication-form">
                         <label htmlFor="username-input" className="label-register">USERNAME</label>
                         <input className="input-register" id="username-input" value={username} onChange={handleUsernameChange} style={{ outlineColor: usernameOutlineColor }} />
                         <p id="error-message-username-input">{errorMessageUsernameInput}</p>

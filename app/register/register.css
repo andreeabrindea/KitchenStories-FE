@@ -27,23 +27,12 @@
   outline-color: #DCA157;
 }
 
-#register-form {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 #form-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.label-register {
-  color: gray;
 }
 
 #form-section > h1 {
@@ -58,17 +47,6 @@
   margin-right: 4px;
 }
 
-#login-link {
-  color: #ef7464;
-}
-
-#register-form > button {
-  background-color: green;
-  color: white;
-  border-radius: 25px;
-  height: 4vh;
-  margin-top: 1vh;
-}
 @media screen and (max-width: 860px) {
   #register-wrapper > :first-child {
     display: none;
@@ -76,11 +54,4 @@
     #register-wrapper > :nth-child(2) {
       margin-top: 2vh;
     }
-}
-
-#register-form > p {
-  color: #ef7464;
-  margin-top: 0.5vh;
-  margin-bottom: 1.5vh;
-  font-size: 0.9rem;
 }

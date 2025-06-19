@@ -1,12 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F0EBE1;
+  --background: #f0ebe1;
   --foreground: #333333;
+  --primary-color-1: #9fdc26;
+  --primary-color-2: #f29c33;
+  --primary-color-3: #ee6352;
+  --primary-color-4: #c4e5fc;
+  --light: #fffbf2;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+form > button {
+  background-color: green;
+  color: var(--light);
+  border-radius: 25px;
+  height: 4vh;
+  margin-top: 1vh;
+}
+
+form > button:hover {
+  background-color: #006000;
+}
+
+.link {
+  color: var(--primary-color-3);
+}
+
+.link:hover {
+  color: #cb2814;
+}
+
+.authentication-form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.authentication-form > input {
+  border-radius: 25px;
+  outline: 1px solid gray;
+  border: 2px;
+  padding: 16px;
+  height: 4vh;
+}
+
+.authentication-form > label {
+  text-transform: uppercase;
+  color: gray;
+}
+
+.authentication-form > p {
+  color: #ef7464;
+  margin-bottom: 1vh;
+  font-size: 0.9rem;
+}
+
+.label-register {
+  color: gray;
 }
