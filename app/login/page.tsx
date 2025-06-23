@@ -56,9 +56,8 @@ export default function Login() {
                     body: JSON.stringify({ password: password, email: email }),
                     headers: { "Content-Type": "application/json" }
                 };
-                
-                let response = await fetch(`https://gourmetstories.onrender.com/users/login/`, requestOptions);
-                console.log(response);
+
+                const response = await fetch(`https://gourmetstories.onrender.com/users/login/`, requestOptions);
                 if (response.status === 200)
                 {
                     router.push("/");
