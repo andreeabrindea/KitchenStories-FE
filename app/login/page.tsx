@@ -30,7 +30,7 @@ export default function Login() {
                 if (passwordOutlineColor === "green") {
                     setWrongCredentialsError("");
                 }
-                setEmailOutlineColor("green")
+                setEmailOutlineColor("green");
             }
         }
     }
@@ -56,11 +56,20 @@ export default function Login() {
                     body: JSON.stringify({ password: password, email: email }),
                     headers: { "Content-Type": "application/json" }
                 };
-                await fetch(`https://gourmetstories.onrender.com/users/login/`, requestOptions);
-                router.push("/");
+                var response = await fetch(`https://gourmetstories.onrender.com/users/login/`, requestOptions);
+                console.log(response);
+                if (response.status === 200)
+                {
+                    router.push("/");
+                }
+                else 
+                {
+                    if (response.status === 401)
+                    setWrongCredentialsError("Wrong credentials.")
+                }
             } catch (error) {
                 console.log("Error while accessing account: ", error)
-                setWrongCredentialsError("Wrong credentials");
+                setWrongCredentialsError("Something went wrong. Please try again.");
             }
         }
     }
@@ -71,7 +80,7 @@ export default function Login() {
                 <section style={{ backgroundImage: `url(${imagine.src})` }} />
                 <section id="login-form-section">
                     <h1>Log In</h1>
-                    <p>Don't have an account? <Link href="/register" className="link">Sign up</Link></p>
+                    <p>Don&#39;t have an account? <Link href="/register" className="link">Sign up</Link></p>
                     <form className="authentication-form">
                         <label>Email</label>
                         <input onChange={handleEmailChange} style={{ outlineColor: emailOutlineColor }} value={email} />
