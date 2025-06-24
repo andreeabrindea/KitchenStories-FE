@@ -73,7 +73,7 @@ export default function Login() {
                         setWrongCredentialsError("Wrong credentials.")
                 }
             } catch (error) {
-                setWrongCredentialsError("Something went wrong. Please try again.");
+                setWrongCredentialsError("Something went wrong. Please try again. " + error);
             }
         }
     }
