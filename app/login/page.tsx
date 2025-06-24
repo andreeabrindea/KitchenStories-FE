@@ -6,6 +6,7 @@ import { useState, ChangeEvent } from "react";
 import validator from 'validator';
 import "./login.css";
 import { useRouter } from 'next/navigation';
+import {setCookiesForAuthentication } from '../middleware/authentication';
 
 export default function Login() {
     const [wrongCredentialsError, setWrongCredentialsError] = useState("");
@@ -58,17 +59,21 @@ export default function Login() {
                 };
 
                 const response = await fetch(`https://gourmetstories.onrender.com/users/login/`, requestOptions);
-                if (response.status === 200)
-                {
-                    router.push("/");
+                if (response.status === 200) {
+                    try {
+                        const token = await response.text();
+                        setCookiesForAuthentication(token);
+                        router.push("/");
+                    }
+                    catch (error) {
+                        setWrongCredentialsError("Something went wrong. Please try again. " + error);
+                    }
                 }
-                else 
-                {
+                else {
                     if (response.status === 401)
-                    setWrongCredentialsError("Wrong credentials.")
+                        setWrongCredentialsError("Wrong credentials.")
                 }
             } catch (error) {
-                console.log("Error while accessing account: ", error)
                 setWrongCredentialsError("Something went wrong. Please try again.");
             }
         }
