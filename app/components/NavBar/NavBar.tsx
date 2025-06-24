@@ -1,3 +1,4 @@
+"use client";
 import './navbar.css';
 import logo from '@/public/cooking.png';
 import Image from 'next/image';
