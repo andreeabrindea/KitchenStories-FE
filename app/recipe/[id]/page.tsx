@@ -1,5 +1,4 @@
 "use client";
-import Header from '@/app/components/NavBar/NavBar';
 import React from 'react';
 import './page.css';
 import recipeImage from '@/public/brooke-lark-wMzx2nBdeng-unsplash.jpg';
@@ -32,8 +31,6 @@ export default function SingleRecipe()
         const response = await fetch(`https://gourmetstories.onrender.com/recipes/${params.id}`, requestOptions);
         const recipe = await response.json();
         setRecipe(recipe);
-        console.log(recipe.description);
-        console.log(recipe);
       } catch (error)
       {
         console.log("Error while fetching recipe: ", error)
@@ -47,7 +44,6 @@ export default function SingleRecipe()
   }
   return (
    <main id="page-wrapper">
-    <Header></Header>
     <section className="section-wrapper">
       <Image src={recipeImage} alt="recipe image"></Image>
     </section>
