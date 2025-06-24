@@ -5,9 +5,14 @@ import Image from 'next/image';
 import { FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
 import Link from 'next/link';
+import userPhoto from '@/public/baker.png';
 
-export default function NavBar() {
+interface NavBarProps {
+  isUserLogged: boolean;
+}
+export default function NavBar({ isUserLogged }: NavBarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleHamburgerMenuClicked = () => {
     setIsMenuOpen((prev) => {
       return !prev;
@@ -18,10 +23,18 @@ export default function NavBar() {
       <div className={`off-screen-menu ${isMenuOpen ? 'active' : ''}`}>
         <Link href="/"><Image src={logo} alt="cooking pot" id="logo-image-off-screen" /></Link>
         <nav id="off-screen-links">
-          <div id="off-screen-authentification-links">
-            <Link href="/login">Login</Link>
-            <Link href="/register"id="off-screen-register-link">Sign up</Link>
-          </div>
+          {!isUserLogged ? (
+            <div id="off-screen-authentification-links">
+              <Link href="/login" className='login-link'>Login</Link>
+              <Link href="/register" className='register-link' id="off-screen-register-link">Sign up</Link>
+            </div>
+          )
+            :
+
+            <div id="off-screen-authentification-links">
+              <Image src={userPhoto} alt="user chef"></Image>
+            </div>
+          }
           <ul id="list-pages-off-screen">
             <li><Link href="/">HOME</Link></li>
             <li>RECIPES</li>
@@ -44,8 +57,15 @@ export default function NavBar() {
         </ul>
         <section>
           <FaSearch id="search-icon"></FaSearch>
-          <Link href="/login">Login</Link>
-          <Link href="/register">Sign up</Link>
+          {!isUserLogged ? (
+            <>
+              <Link href="/login" className='login-link'>Login</Link>
+              <Link href="/register" className='register-link'>Sign up</Link>
+            </>
+          )
+            :
+            <Image src={userPhoto} alt="user chef" id="user-avatar"></Image>
+          }
         </section>
         <nav id="hamburger-menu-nav">
           <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`} onClick={handleHamburgerMenuClicked}>

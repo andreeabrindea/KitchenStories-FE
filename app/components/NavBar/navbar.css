@@ -195,21 +195,6 @@
     flex-direction: row;
     gap: 2vw;
   }
-
-
-  #off-screen-authentification-links :nth-child(1) {
-    border-radius: 25px;
-    padding: 4px 16px;
-    border: 1px solid #f29c33;
-    color: #f29c33;
-  }
-  #off-screen-authentification-links :nth-child(2) {
-    border-radius: 25px;
-    padding: 4px 16px;
-    border: 1px;
-    background-color: #f29c33;
-    color: #f0ebe1;
-  }
 }
 
 #logo-image {
@@ -230,14 +215,22 @@
   align-items: center;
 }
 
-#navigation-wrapper section :nth-child(2) {
+#user-avatar {
+  height: 4vh;
+  width: auto;
+  outline: none;
+  margin: 0 1vw;
+}
+
+.login-link {
   border-radius: 25px;
   padding: 4px 16px;
   border: 1px solid #f29c33;
   color: #f29c33;
   cursor: pointer;
 }
-#navigation-wrapper section :nth-child(3) {
+
+.register-link {
   border-radius: 25px;
   padding: 4px 16px;
   border: 1px;

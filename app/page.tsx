@@ -1,5 +1,4 @@
 "use client";
-import NavBar from "./components/NavBar/NavBar";
 import './page.css';
 import Header from './components/Header/Header';
 import Categories from './components/Categories/Categories';
@@ -7,31 +6,29 @@ import RecipesCarousel from "./components/RecipesCarousel/RecipesCarousel";
 import { useState, useEffect } from "react";
 import RecipeCard from "./components/RecipeCard/RecipeCard";
 
+interface Recipe {
+  id: string;
+  name: string;
+  author: string;
+  description: string;
+}
+
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[] | null>(null);
   useEffect(() => {
-    async function fetchRecipes() {
-      const response = await fetch("https://gourmetstories.onrender.com/recipes");
-      let recipes = await response.json();
-      recipes = recipes.slice(0, 5);
-      setRecipes(recipes);
-    }
 
     fetchRecipes();
   }, []);
 
-  interface Recipe {
-    id: string;
-    name: string;
-    author: string;
-    description: string;
+  async function fetchRecipes() {
+    const response = await fetch("https://gourmetstories.onrender.com/recipes");
+    let recipes = await response.json();
+    recipes = recipes.slice(0, 5);
+    setRecipes(recipes);
   }
 
   return (
     <main id="page-wrapper">
-      <nav>
-        <NavBar />
-      </nav>
       <header>
         <Header />
       </header>

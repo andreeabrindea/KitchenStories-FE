@@ -1,5 +1,4 @@
 "use client";
-import NavBar from "../components/NavBar/NavBar";
 import './register.css';
 import imagine from '@/public/brooke-lark-wMzx2nBdeng-unsplash.jpg';
 import Link from 'next/link';
@@ -114,7 +113,6 @@ export default function Register() {
     }
     return (
         <>
-            <NavBar></NavBar>
             <main id="register-wrapper">
                 <section style={{ backgroundImage: `url(${imagine.src})` }}>
                 </section>

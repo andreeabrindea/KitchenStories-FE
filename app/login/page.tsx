@@ -1,5 +1,4 @@
 "use client";
-import NavBar from "../components/NavBar/NavBar";
 import imagine from '@/public/brooke-lark-wMzx2nBdeng-unsplash.jpg';
 import Link from 'next/link';
 import { useState, ChangeEvent } from "react";
@@ -80,7 +79,6 @@ export default function Login() {
     }
     return (
         <>
-            <NavBar></NavBar>
             <main id="login-wrapper">
                 <section style={{ backgroundImage: `url(${imagine.src})` }} />
                 <section id="login-form-section">
